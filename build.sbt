@@ -1,6 +1,6 @@
 import sbt.inc.Analysis
 
-val PlayVersion = playVersion(sys.props.getOrElse("play.version", "2.5.6"))
+val PlayVersion = playVersion(sys.props.getOrElse("play.version", "2.5.10"))
 
 val PlayEnhancerVersion = "1.1.0"
 
@@ -59,7 +59,7 @@ playBuildExtraPublish := {
 def playEbeanDeps = Seq(
   "com.typesafe.play" %% "play-java-jdbc" % PlayVersion,
   "com.typesafe.play" %% "play-jdbc-evolutions" % PlayVersion,
-  "org.avaje.ebean" % "ebean" % "8.2.3",
+  "org.avaje.ebean" % "ebean" % "9.5.1",
   avajeEbeanormAgent,
   "com.typesafe.play" %% "play-test" % PlayVersion % Test
 )
@@ -69,7 +69,7 @@ def sbtPlayEbeanDeps = Seq(
   "com.typesafe" % "config" % "1.3.0"
 )
 
-def avajeEbeanormAgent = "org.avaje.ebeanorm" % "avaje-ebeanorm-agent" % "8.1.1"
+def avajeEbeanormAgent = "org.avaje.ebean" % "ebean-agent" % "8.2.1"
 
 // Ebean enhancement
 
