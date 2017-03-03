@@ -19,6 +19,7 @@ lazy val core = project
   .settings(jacoco.settings: _*)
   .settings(
     name := "play-ebean",
+    resolvers += Resolver.mavenLocal,
     libraryDependencies ++= playEbeanDeps,
     compile in Compile := enhanceEbeanClasses(
       (dependencyClasspath in Compile).value,
@@ -59,7 +60,7 @@ playBuildExtraPublish := {
 def playEbeanDeps = Seq(
   "com.typesafe.play" %% "play-java-jdbc" % PlayVersion,
   "com.typesafe.play" %% "play-jdbc-evolutions" % PlayVersion,
-  "org.avaje.ebean" % "ebean" % "9.5.1",
+  "org.avaje.ebean" % "ebean" % "9.5.2",
   avajeEbeanormAgent,
   "com.typesafe.play" %% "play-test" % PlayVersion % Test
 )
